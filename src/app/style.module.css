@@ -1,0 +1,345 @@
+/* JournalPortfolio.module.css */
+
+.journalContainer {
+  background-color: #d7cdb4; /* Fundo simulando a mesa ou fundo externo */
+  padding: 40px 20px;
+  min-height: 100vh;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  color: #1a1a1a;
+  position: relative;
+  display: block; /* Mantém fluxo nativo e compatível */
+}
+
+/* Textura sutil para simular os poros e imperfeições do papel impresso antigo */
+.paperOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: radial-gradient(#000 1px, transparent 0), radial-gradient(#000 1px, transparent 0);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+  z-index: 10;
+}
+
+.journalBody {
+  background-color: #f4edd8; /* Cor clássica do papel jornal amarelado/envelhecido */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 35px;
+  border: 1px solid #bcaf94;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  position: relative;
+}
+
+/* Cabeçalho do Jornal */
+.header {
+  border-bottom: 5px double #1a1a1a; /* Linha dupla tradicional de jornal */
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.headerTop {
+  display: table;
+  width: 100%;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.headerTop span {
+  display: table-cell;
+}
+.headerTop span:nth-child(2) { text-align: center; }
+.headerTop span:last-child { text-align: right; }
+
+.mainTitle {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 65px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin: 15px 0 8px 0;
+  text-transform: uppercase;
+  line-height: 0.85;
+}
+
+@media (max-width: 640px) {
+  .mainTitle { font-size: 40px; }
+}
+
+.headerBottom {
+  display: table;
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 6px 0;
+  margin-bottom: 4px;
+}
+.headerBottom span { display: table-cell; }
+.headerBottom .location { text-align: right; }
+
+
+/* Barras de Título de Seção */
+.sectionTitleBar {
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  background-color: rgba(0, 0, 0, 0.02);
+  text-align: center;
+  padding: 5px 0;
+  margin: 35px 0 20px 0;
+}
+
+.sectionTitleBar h3 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+/* Layout da Manchete Principal (Sobre Mim) */
+.mainHeadlineSection {
+  margin-bottom: 25px;
+}
+
+.mainHeadlineLayout {
+  display: table;
+  width: 100%;
+}
+
+.headlineTextSide {
+  display: table-cell;
+  width: 60%;
+  padding-right: 25px;
+  vertical-align: top;
+}
+
+.headlinePhotoSide {
+  display: table-cell;
+  width: 40%;
+  vertical-align: top;
+}
+
+@media (max-width: 768px) {
+  .headlineTextSide, .headlinePhotoSide {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+  }
+  .headlinePhotoSide { margin-top: 20px; }
+}
+
+.mainHeadlineTitle {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.leadParagraph {
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.bodyParagraph {
+  font-size: 13.5px;
+  line-height: 1.6;
+  text-align: justify;
+  text-indent: 25px; /* Recuo tradicional de parágrafo impresso */
+  color: #222;
+}
+
+
+/* Foto Estilo Jornal Antigo */
+.photoContainer {
+  border: 1px solid #1a1a1a;
+  padding: 6px;
+  background-color: #fdfaf2;
+}
+
+.photoPlaceholder {
+  background-color: #cbd2be;
+  border: 1px dashed #444;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #1a1a1a;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.photoCaption {
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.3;
+  margin-top: 8px;
+  color: #333;
+  border-left: 3px solid #1a1a1a;
+  padding-left: 8px;
+}
+
+
+/* Grid de Tecnologias (Estilo Classificados) */
+.techGrid {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 15px;
+  margin-left: -15px;
+  width: calc(100% + 30px);
+}
+
+.techCard {
+  display: inline-block;
+  width: 47%;
+  margin: 1%;
+  border: 1px dashed #1a1a1a;
+  padding: 15px;
+  vertical-align: top;
+  background-color: rgba(0,0,0,0.005);
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .techCard { width: 98%; margin: 1% 0; }
+}
+
+.techCard h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  letter-spacing: 1px;
+  border-bottom: 1px dashed #1a1a1a;
+  padding-bottom: 4px;
+}
+
+.techCard p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* Grid de Projetos (Colunas de Notícias) */
+.projectsGrid {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.projectArticle {
+  display: table-cell;
+  width: 33.33%;
+  padding: 0 15px;
+  border-right: 1px dashed #1a1a1a;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.projectArticle:first-child { padding-left: 0; }
+.projectArticle:last-child { border-right: none; padding-right: 0; }
+
+@media (max-width: 768px) {
+  .projectsGrid, .projectArticle {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px dashed #1a1a1a;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  .projectArticle:last-child { border-bottom: none; margin-bottom: 0; }
+}
+
+.projectTag {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+.projectTitle {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 6px 0;
+  line-height: 1.2;
+}
+
+.projectSubtitle {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #444;
+  line-height: 1.3;
+}
+
+.projectDesc {
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.readMore {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+
+
+/* Rodapé do Jornal */
+.journalFooter {
+  margin-top: 40px;
+  border-top: 5px double #1a1a1a;
+  padding-top: 15px;
+}
+
+.footerBar {
+  display: table;
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.footerBar span:last-child { text-align: right; float: right; }
+
+.footerContent {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footerContent p { margin: 4px 0; }
+
+.copyright {
+  margin-top: 25px !important;
+  font-size: 10px;
+  text-align: center;
+  color: #555;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 12px;
+}
